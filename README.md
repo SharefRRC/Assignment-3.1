@@ -17,4 +17,4 @@ This program simulates an Automated Teller Machine (ATM) where users can deposit
 
 ## Interest Update
 
-The Interest Update program is designed to apply interest to multiple customers' accounts based on their current balance. It reads account balances from a pipe-delimited file (`account_balances.txt`), calculates the interest earned or charged for each account, updates the balances, and saves the updated data to a CSV file (`updated_balances_FL.csv`). The program also prints the updated account balances to the console.
+The Interest Update program is designed to apply interest to multiple customers' accounts based on their current balance. It reads account balances from a pipe-delimited file (`account_balances.txt`), calculates the interest earned or charged for each account, updates the balances, and saves the updated data to a CSV file (`updated_balances_SI.csv`). The program also prints the updated account balances to the console.
