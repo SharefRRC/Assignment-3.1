@@ -20,3 +20,46 @@ print("Deposit: D".center(40))
 print("Withdraw: W".center(40))
 print("Quit: Q".center(40))
 print("*" * 40)
+
+# Get user input
+user_choice = input("Enter your selection: ").strip().upper()
+
+# Validate user input
+if user_choice in menu_options:
+    if user_choice == "D":
+        # Deposit logic
+        deposit_amount = float(input("Enter the transaction amount: "))
+        if deposit_amount > 0:
+            balance += deposit_amount
+            print("\n" + "*" * 40)
+            print(f"Balance: ${balance:,.2f}".center(40))
+            print("*" * 40)
+        else:
+            print("\n" + "*" * 40)
+            print("INVALID TRANSACTION".center(40))
+            print("*" * 40)
+    elif user_choice == "W":
+        # Withdraw logic
+        withdraw_amount = float(input("Enter the transaction amount: "))
+        if withdraw_amount > 0:
+            if balance >= withdraw_amount:
+                balance -= withdraw_amount
+                print("\n" + "*" * 40)
+                print(f"Balance: ${balance:,.2f}".center(40))
+                print("*" * 40)
+            else:
+                print("\n" + "*" * 40)
+                print("INSUFFICIENT FUNDS".center(40))
+                print("*" * 40)
+        else:
+            print("\n" + "*" * 40)
+            print("INVALID TRANSACTION".center(40))
+            print("*" * 40)
+    elif user_choice == "Q":
+        # Quit the program
+        print("\nThank you for using PIXELL RIVER FINANCIAL. Goodbye!")
+else:
+    # Handle invalid selection
+    print("\n" + "*" * 40)
+    print("INVALID SELECTION".center(40))
+    print("*" * 40)
