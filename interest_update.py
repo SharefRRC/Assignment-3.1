@@ -13,3 +13,27 @@ with open("account_balances.txt", "r") as file:
 
 # Pretty print the dictionary
 pprint.pprint(account_balances)
+
+# Iterate through the dictionary and calculate interest
+for account_number, balance in account_balances.items():
+    if balance >= 5000:
+        # 5.0% interest for balances >= $5000
+        interest = balance * 0.05 / 12
+    elif balance >= 1000:
+        # 2.5% interest for balances >= $1000 and < $5000
+        interest = balance * 0.025 / 12
+    elif balance > 0:
+        # 1.0% interest for balances > $0 and < $1000
+        interest = balance * 0.01 / 12
+    elif balance < 0:
+        # 10.0% interest charge for negative balances
+        interest = balance * 0.10 / 12
+    else:
+        # No interest for zero balance
+        interest = 0
+
+    # Update the balance with the calculated interest
+    account_balances[account_number] += interest
+
+# Pretty print the updated dictionary
+pprint.pprint(account_balances)
