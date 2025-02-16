@@ -37,3 +37,14 @@ for account_number, balance in account_balances.items():
 
 # Pretty print the updated dictionary
 pprint.pprint(account_balances)
+
+# Define the output filename with initials (e.g., FL for First Last)
+output_filename = "updated_balances_SI.csv"
+
+# Write the updated account balances to the CSV file
+with open(output_filename, "w") as file:
+    # Write the header
+    file.write("Account,Balance\n")
+    # Write each account and balance to the file
+    for account_number, balance in account_balances.items():
+        file.write(f"{account_number},{balance:.6f}\n")
