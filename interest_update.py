@@ -47,4 +47,12 @@ with open(output_filename, "w") as file:
     file.write("Account,Balance\n")
     # Write each account and balance to the file
     for account_number, balance in account_balances.items():
-        file.write(f"{account_number},{balance:.6f}\n")
+        file.write(f"{account_number},{balance:.2f}\n")
+
+import csv
+
+# Read and print the updated account balances from the CSV file
+with open(output_filename, "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        print(row)
